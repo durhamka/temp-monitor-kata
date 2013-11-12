@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+require_relative './weather_data_importer'
+require_relative './minimum_temp_finder'
+
+data_importer = WeatherDataImporter.new('weather_data.txt')
+entries = data_importer.entries
+temp_spread_finder = MinimumTempFinder.new(entries)
+puts temp_spread_finder.min_temp_spread
